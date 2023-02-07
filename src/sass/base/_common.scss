@@ -1,0 +1,59 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-color-main);
+    background-color: var(--background-color-main);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+
+
+button {
+    cursor: pointer;
+}
+
+a,
+button:focus-visible {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.icon {
+    fill: currentColor;
+}

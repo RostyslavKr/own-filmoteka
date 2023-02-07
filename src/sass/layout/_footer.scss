@@ -1,0 +1,41 @@
+.footer{
+    background-color: #F7F7F7;
+}
+.footer-wrapper{
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+
+}
+
+.wrapper-link-developer{
+    display: flex;
+    justify-content: center;
+}
+.footer-text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #545454;
+}
+.link-developer{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #545454;
+}
+.icon-heart{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+@media screen and(min-width:768px) {
+    .footer-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
