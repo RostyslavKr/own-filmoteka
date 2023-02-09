@@ -24,7 +24,7 @@ export default class FetchMovies {
     const response = await axios.get(
       'https://api.themoviedb.org/3/genre/movie/list?api_key=7c6a11c2d8e8524ccfd41d8aedf2bd73&language=en-US'
     );
-    return response;
+    return response.data;
   }
   fetchMoviesForQuery() {
     axios
