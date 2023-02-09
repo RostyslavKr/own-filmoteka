@@ -1,0 +1,57 @@
+.list-movies{
+    display: block;
+}
+.item-movies{
+    margin: 0 auto;
+}
+
+.img-movie{
+    display: block;
+    width: 280px;
+    height: 398px;
+    background-color: black;
+    @media screen and(min-width:768px) {
+        width: 336px;
+        height: 445px;
+    }
+
+    @media screen and(min-width:1280px) {
+        width: 395px;
+        height: 574px;
+    }
+}
+
+.title-movie{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--primary-text-color);
+}
+
+.genre-movie{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--second-color);
+}
+@media screen and(min-width:768px) {
+    .list-movies{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media screen and(min-width:1280px) {
+    .genre-movie{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .title-movie{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

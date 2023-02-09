@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Filmoteka</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,12 +11,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <include src="./partials/preloader.html"></include>
     <include src="./partials/header.html"></include>
-    <include src="./partials/home-main.html"></include>
+    <ul class="container js-home-main list-movies"></ul>
 
     <include src="./partials/footer.html"></include>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

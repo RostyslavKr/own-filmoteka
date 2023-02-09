@@ -1,19 +1,24 @@
 .page-header {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #D9D9D9;
-    background-image: url('/src/images/mobile/header-library-mobile.jpg');
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/src/images/mobile/header-library-mobile.jpg');
+    background-position: center;
     background-size: cover;
+    margin-bottom: 20px;
 
     @media screen and(min-width:768px) {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #D9D9D9;
-        background-image: url('/src/images/tablet/header-library-tablet.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/src/images/tablet/header-library-tablet.jpg');
+        background-position: center;
         background-size: cover;
+        margin-bottom: 60px;
     }
 
 
     @media screen and(min-width:1280px) {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #D9D9D9;
-        background-image: url('/src/images/desktop/header-library-desktop.jpg');
+        background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/src/images/desktop/header-library-desktop.jpg');
+        background-position: center;
         background-size: cover;
+        
     }
 
 }
@@ -22,7 +27,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
     margin-bottom: 40px;
 }
 
@@ -64,6 +68,28 @@
     text-transform: uppercase;
 }
 
+.wrapper-btn{
+    display: flex;
+    justify-content: center;
+   
+}
+.btn-library-header{
+    display: block;
+    text-transform: uppercase;
+    width: 130px;
+    height: 44px;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+.watched-btn{
+    background-color: transparent;
+    margin-right: 20px;
+    
+}
+.queue-btn{
+    background-color: transparent;
+}
 
 @media screen and(min-width: 768px) {
    
@@ -76,6 +102,14 @@
     .link-filmoteka {
         width: auto;
     }
+    .btn-library-header{
+        width: 152px;
+    }
+    .watched-btn {
+        margin-right: 32px;
+        
+    }
+    
 }
 
 @media screen and(min-width: 1280px) {
@@ -84,4 +118,13 @@
     .logo-title {
         margin-left: 10px;
     }
+    .btn-library-header{
+        width: 148px;
+        height: 42px;
+    }
+    .watched-btn {
+        margin-right: 16px;
+       
+    }
+   
 }

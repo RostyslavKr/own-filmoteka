@@ -4,12 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./sass/library.scss" />
+
     <title>My Library</title>
   </head>
   <body>
+    <include src="./partials/preloader.html"></include>
     <include src="./partials/library-header.html"></include>
+    <ul class="container js-library-main list-movies">
+      <li class="item-movies">
+        <img class="img-movie" src="./images/logo.png" alt="logo" />
+        <h2 class="title-movie">Warrior</h2>
+        <p class="genre-movie">Horror</p>
+      </li>
+      <li class="item-movies">
+        <img class="img-movie" src="./images/logo.png" alt="logo" />
+
+        <h2 class="title-movie">Warrior</h2>
+        <p class="genre-movie">Horror</p>
+      </li>
+      <li class="item-movies">
+        <img class="img-movie" src="./images/logo.png" alt="logo" />
+
+        <h2 class="title-movie">Warrior</h2>
+        <p class="genre-movie">Horror</p>
+      </li>
+    </ul>
 
     <include src="./partials/footer.html"></include>
+
+    <script type="module" src="./library.js"></script>
   </body>
 </html>
