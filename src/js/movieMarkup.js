@@ -5,11 +5,12 @@ const movieApi = new MovieApi();
 
 movieApi.fetchMoviesWeek().then(data => createMarkup(data.results));
 movieApi.fetchGeners().then(data => {
-  genresMovies(data);
+  console.log(data);
+  genresMovies(data.genres);
 });
 function createMarkup(results) {
   console.log(results);
-  
+
   const markup = results
     .map(
       ({
