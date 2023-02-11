@@ -20,20 +20,23 @@
       </ul>
     </nav>
   </div>
-  <div class="field container">
-    <input
-      class="search"
-      type="text"
-      required
-      autocomplete="off"
-      id="search"
-      placeholder="Movie search"
-    />
+  <form class="js-search-form">
+    <div class="field container">
+      <input
+        class="search"
+        name="query"
+        type="text"
+        required
+        autocomplete="off"
+        id="search"
+        placeholder="Movie search"
+      />
 
-    <button class="search-btn" type="submit">
-      <svg class="icon-search" width="18" height="18">
-        <use href="/src/images/svg/./symbol-defs.svg#icon-search"></use>
-      </svg>
-    </button>
-  </div>
+      <button class="search-btn" type="submit">
+        <svg class="icon-search" width="18" height="18">
+          <use href="/src/images/svg/./symbol-defs.svg#icon-search"></use>
+        </svg>
+      </button>
+    </div>
+  </form>
 </header>

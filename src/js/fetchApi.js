@@ -4,6 +4,7 @@ export default class FetchMovies {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
+    this.idMovie = '';
   }
 
   async fetchMoviesWeek() {
@@ -26,23 +27,34 @@ export default class FetchMovies {
     );
     return response.data;
   }
-  fetchMoviesForQuery() {
-    axios
-      .get(
+  async fetchMovieById() {
+    try {
+      const r = await axios.get(
+        `https://api.themoviedb.org/3/movie/${this.idMovie}?api_key=7c6a11c2d8e8524ccfd41d8aedf2bd73&language=en-US`
+      );
+      console.log(r);
+      return r.data;
+    } catch (error) {
+      return console.log(error);
+    }
+  }
+  async fetchMoviesForQuery() {
+    try {
+      const r = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=7c6a11c2d8e8524ccfd41d8aedf2bd73&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`
-      )
-      .then(r => {
-        console.log(r);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      );
+      return r.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   incrementPage(page) {
     this.page = page;
   }
-
+  getIdMovie(id) {
+    this.idMovie = id;
+  }
   resetPage() {
     this.page = 1;
   }

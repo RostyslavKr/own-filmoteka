@@ -1,0 +1,123 @@
+.backdrop-movie.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop-movie{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size:cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    transition: visibility 500ms linear, opacity 500ms linear;
+    overflow-y: scroll;
+}
+.modal-movie{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    width: 280px;
+    
+   
+    
+    
+    @media screen and(min-width:768px) {
+        width: 704px;
+        
+        padding-top: 40px;
+        padding-bottom: 40px;
+        // padding-left: 32px;
+        // padding-right: 32px;
+        // padding-top: 220px;
+    }
+
+    @media screen and(min-width: 1240px) {
+        width: 806px;
+        
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 40px;
+       
+    }
+   
+}
+.movie-wrapper{
+  @media screen and(min-width:768px) {
+    display: flex;    
+  }
+}
+
+.container-movie-content{
+    display: block;
+}
+.image-modal-movie{
+    display: block;
+    width: 240px;
+    height: 357px;
+
+    @media screen and(min-width:768px) {
+      width: 264px;
+      height: 374px;
+
+    }
+
+    @media screen and(min-width: 1240px) {
+        width: 375px;
+        height: 478px;
+        
+    }
+}
+.btnCloseModalMovie{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    
+}
+.icon-cancel-circle{
+  display: block;
+  padding: 5px;
+  fill: currentColor;
+}
+
+.btnCloseModalMovie .icon-cancel-circle:hover{
+    border: 1px solid var(--second-color);
+    border-radius: 50%;
+    fill: var(--second-color);
+}
+.btnCloseModalMovie .icon-cancel-circle:focus{
+    border: 1px solid var(--second-color);
+    border-radius: 50%;
+    fill: var(--second-color);
+}
+td{
+   font-weight: 500;
+    font-size: 12px;
+    line-height: 16px; 
+}
+.table-title{
+    color: var(--second-text-color);
+    padding-right: 40px ;
+
+    @media screen and(min-width:1240px) {
+        padding-right: 85px;
+    }
+}
+
+.table-text{
+    color: var(--primary-text-color);
+}

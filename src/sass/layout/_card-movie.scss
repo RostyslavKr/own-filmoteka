@@ -1,5 +1,6 @@
 .list-movies{
     display: block;
+    padding-bottom: 40px;
 }
 .item-movies{
     margin: 0 auto;
@@ -39,11 +40,20 @@
     .list-movies{
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 15px;
     }
+        .item-movies {
+            margin: 0 ;
+            width: 336px;
+        }
 }
 
 @media screen and(min-width:1280px) {
+    .list-movies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
     .genre-movie{
         font-weight: 500;
         font-size: 20px;
@@ -54,4 +64,8 @@
         font-size: 20px;
         line-height: 24px;
     }
+        .item-movies {
+            margin: 0 ;
+            width: 395px;
+        }
 }

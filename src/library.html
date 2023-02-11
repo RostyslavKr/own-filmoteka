@@ -11,10 +11,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/library.scss" />
-    <script src="./library.js" type="module"></script>
+
     <title>My Library</title>
   </head>
   <body>
+    <include src="./partials/modalMovie.html"></include>
     <include src="./partials/preloader.html"></include>
     <include src="./partials/library-header.html"></include>
     <ul class="container js-library-main list-movies">
@@ -38,5 +39,6 @@
     </ul>
 
     <include src="./partials/footer.html"></include>
+    <script src="./library.js" type="module"></script>
   </body>
 </html>
