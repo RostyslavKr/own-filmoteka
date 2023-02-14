@@ -2,7 +2,7 @@ export { checkGenreByID, checkGenreByIdForModal };
 function checkGenreByID(ids) {
   const saveGenreId = localStorage.getItem('GENRES-MOVIES');
   const genreIdParse = JSON.parse(saveGenreId);
-  //   console.log(genreIdParse);
+
   let genreArr = [];
 
   const genre_ids = ids.genre_ids;
@@ -10,7 +10,6 @@ function checkGenreByID(ids) {
   for (const genreId of genreIdParse) {
     if (genre_ids.includes(genreId.id)) {
       genreArr.push(genreId.name);
-      //   console.log(genreArr);
     }
   }
   let genresStr = '';
@@ -26,18 +25,12 @@ function checkGenreByID(ids) {
 }
 
 function checkGenreByIdForModal(ids) {
-  const saveGenreId = localStorage.getItem('GENRES-MOVIES');
-  const genreIdParse = JSON.parse(saveGenreId);
-  //   console.log(genreIdParse);
   let genreArr = [];
 
   const genre_ids = ids.genres;
 
-  for (const genreId of genreIdParse) {
-    if (genre_ids.includes(genreId.id)) {
-      genreArr.push(genreId.name);
-      //   console.log(genreArr);
-    }
+  for (const genre_id of genre_ids) {
+    genreArr.push(genre_id.name);
   }
   let genresStr = '';
   if (genreArr.length === 0) {

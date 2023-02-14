@@ -5,9 +5,12 @@ const listMovies = document.querySelector('.js-home-main');
 const searchMovie = document.querySelector('.js-search-form');
 const movieApi = new MovieApi();
 searchMovie.addEventListener('submit', searchMovieForQuery);
-movieApi.fetchMoviesWeek().then(data => createMarkup(data.results));
-movieApi.fetchGeners().then(data => {
+movieApi.resetPage();
+movieApi.fetchMoviesWeek().then(data => {
   console.log(data);
+  createMarkup(data.results);
+});
+movieApi.fetchGeners().then(data => {
   genresMovies(data.genres);
 });
 
@@ -54,3 +57,4 @@ function genresMovies(genres) {
 function clearPage() {
   listMovies.innerHTML = '';
 }
+export { createMarkup, clearPage };

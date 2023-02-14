@@ -3,3 +3,4 @@ import './js/fetchApi';
 import './js/movieMarkup';
 import './js/checkGenres';
 import './js/modalMovie';
+import './js/pagination';

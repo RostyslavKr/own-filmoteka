@@ -1,0 +1,27 @@
+.pagination-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination-btn{
+    width: 40px;
+    height: 40px;
+}
+.icon-arrow-left{
+    width: 16px;
+    height: 16px;
+}
+.icon-arrow-right {
+    width: 16px;
+    height: 16px;
+}
+.item-arrow-left{
+    display: none;
+}
+.points{
+    display: none;
+}
+
+.currentBtnColor{
+background-color: var(--second-color);    
+}

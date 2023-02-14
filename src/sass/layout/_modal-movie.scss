@@ -15,16 +15,25 @@
     z-index: 100;
     transition: visibility 500ms linear, opacity 500ms linear;
     overflow-y: scroll;
+
+    @media screen and(min-width:768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+    }
 }
 .modal-movie{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 40px;
-    margin-top: 50px;
+    padding-bottom: 40px;
+    margin: 20px auto;
+    
     background-color: #ffffff;
     width: 280px;
     
@@ -36,12 +45,12 @@
         
         padding-top: 40px;
         padding-bottom: 40px;
-        // padding-left: 32px;
-        // padding-right: 32px;
+        padding-left: 36px;
+        padding-right: 72px;
         // padding-top: 220px;
     }
 
-    @media screen and(min-width: 1240px) {
+    @media screen and(min-width: 1024px) {
         width: 806px;
         
         padding-left: 12px;
@@ -60,32 +69,49 @@
 .container-movie-content{
     display: block;
 }
+.wrapper-image-movie{
+    margin-bottom: 20px;
+    @media screen and(min-width:768px) {
+      margin-bottom: 0;
+      margin-right: 68px;        
+    }
+    @media screen and(min-width:1024px) {
+      margin-right: 16px;  
+      
+    }
+}
 .image-modal-movie{
     display: block;
     width: 240px;
     height: 357px;
-
+    margin-bottom: 10px;
     @media screen and(min-width:768px) {
       width: 264px;
       height: 374px;
+      
 
     }
 
-    @media screen and(min-width: 1240px) {
+    @media screen and(min-width: 1024px) {
         width: 375px;
         height: 478px;
         
     }
 }
+
+.name-movie{
+    margin-bottom: 20px;
+}
 .btnCloseModalMovie{
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 5px;
+    right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     border: none;
+    padding: 0;
     
 }
 .icon-cancel-circle{
@@ -104,7 +130,12 @@
     border-radius: 50%;
     fill: var(--second-color);
 }
+
+table{
+    margin-bottom: 20px;
+}
 td{
+    padding-bottom: 8px;
    font-weight: 500;
     font-size: 12px;
     line-height: 16px; 
@@ -112,12 +143,72 @@ td{
 .table-title{
     color: var(--second-text-color);
     padding-right: 40px ;
+    padding-bottom: 8px;
 
-    @media screen and(min-width:1240px) {
+    @media screen and(min-width:1024px) {
         padding-right: 85px;
     }
 }
-
+.table-titl{
+    min-width: 69px;
+}
 .table-text{
     color: var(--primary-text-color);
 }
+.about{
+    font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: var(--primary-text-color);
+    margin-bottom: 8px;
+}
+
+.desribe-movie{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+}
+.wrapper-btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+.btnAddWatched{
+    margin-right: 20px;
+}
+.btnModal {
+    display: block;
+    font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        width: 110px;
+        height: 44px;
+        border-radius: 5px;
+        border: 1px solid #000;
+        color: #000;
+    background-color: transparent;
+   @media screen and(min-width:768px) {
+     width: 125px;
+   } 
+   @media screen and(min-width:1240px) {
+       width: 136px;   
+   }
+  
+}
+.btnModal:hover{
+    background-color: var(--second-color);
+    color: #ffffff;
+    border: none;
+}
+.btnModal:focus{
+    background-color: var(--second-color);
+    color: #ffffff;
+    border: none;
+}
+
+

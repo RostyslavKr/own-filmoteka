@@ -4,18 +4,18 @@ export default class FetchMovies {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
+    this.maxPages = '';
     this.idMovie = '';
   }
 
   async fetchMoviesWeek() {
-    const url =
-      'https://api.themoviedb.org/3/trending/movie/week?api_key=7c6a11c2d8e8524ccfd41d8aedf2bd73';
+    const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=7c6a11c2d8e8524ccfd41d8aedf2bd73&page=${this.page}`;
 
     try {
       const response = await axios.get(url);
 
       const data = response.data;
-
+      this.maxPages = data.total_pages;
       return data;
     } catch (error) {
       console.log(error);
@@ -49,8 +49,18 @@ export default class FetchMovies {
     }
   }
 
-  incrementPage(page) {
+  currentPage(page) {
     this.page = page;
+  }
+
+  incrementPage() {
+    this.page += 1;
+  }
+  reductPage() {
+    if (this.page === 1) {
+      return;
+    }
+    this.page -= 1;
   }
   getIdMovie(id) {
     this.idMovie = id;

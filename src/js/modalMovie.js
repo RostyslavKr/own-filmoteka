@@ -1,17 +1,21 @@
 import MovieApi from './fetchApi';
 import { checkGenreByIdForModal } from './checkGenres';
+
 const movieImage = document.querySelector('.list-movies');
 const backdropMovie = document.querySelector('.backdrop-movie');
 const closeModalMovieBtn = document.querySelector('.btnCloseModalMovie');
 const movieWrapper = document.querySelector('.movie-wrapper');
+
 const movieApi = new MovieApi();
-console.log(movieImage);
+
 movieImage.addEventListener('click', openModalMovie);
 
 function openModalMovie(e) {
   closeModalMovieBtn.addEventListener('click', closeModalMovie);
   if (e.target.classList.value === 'img-movie') {
     backdropMovie.classList.toggle('is-hidden');
+    backdropMovie.addEventListener('click', closeBackdrop);
+    document.addEventListener('keydown', closeEsc);
     const movieId = e.target.id;
     console.log(movieId);
     movieApi.getIdMovie(movieId);
@@ -24,7 +28,25 @@ function openModalMovie(e) {
 function closeModalMovie(e) {
   backdropMovie.classList.toggle('is-hidden');
   clearPage();
+  backdropMovie.removeEventListener('click', closeBackdrop);
+  document.removeEventListener('keydown', closeEsc);
   closeModalMovieBtn.removeEventListener('click', closeModalMovie);
+}
+
+function closeBackdrop(e) {
+  if (e.target.classList.value !== 'backdrop-movie') {
+    return;
+  }
+
+  closeModalMovie(e);
+}
+
+function closeEsc(e) {
+  if (e.key !== 'Escape') {
+    return;
+  }
+  e.stopPropagation();
+  closeModalMovie(e);
 }
 
 function createModalMovieMarkup(results) {
@@ -47,45 +69,53 @@ function createModalMovieMarkup(results) {
     } else {
       imageSrc = 'no_image';
     }
-    return `<img
+    return `<div class="wrapper-image-movie">
+       <img
         id="${movieId}"
         class="image-modal-movie"
         src="${imageSrc}"
         alt="${movieTitle}"
       />
+      <button class="btnTrailer btnModal">Trailer</button>
+      </div>
       <div class="container-movie-content">
       <h2 class="name-movie">${movieTitle}</h2>
       <table>
         <tr>
-          <td class="table-title">Vote / Votes</td>
-          <td class="table-text">${vote.toFixed(1)} / ${votes}</td>
+          <td class="table-title"><p class="table-titl">Vote / Votes</p></td>
+          <td class="table-text"><p class="table-tex">${vote.toFixed(
+            1
+          )} / ${votes}</p></td>
         </tr>
         <tr>
-          <td class="table-title">Popularity</td>
-          <td class="table-text">${popularity.toFixed(1)}</td>
+          <td class="table-title"><p class="table-titl">Popularity</p></td>
+          <td class="table-text"><p class="table-tex">${popularity.toFixed(
+            1
+          )}</p></td>
         </tr>
         <tr>
-          <td class="table-title">Original Title</td>
-          <td class="table-text">${originalTitle}</td>
+          <td class="table-title"><p class="table-titl">Original Title</p></td>
+          <td class="table-text"><p class="table-tex">${originalTitle}</p></td>
         </tr>
         <tr>
-          <td class="table-title">Genre</td>
-          <td class="table-text">${checkGenreByIdForModal(obj)}</td>
+          <td class="table-title"><p class="table-titl">Genre</p></td>
+          <td class="table-text"><p class="table-tex">${checkGenreByIdForModal(
+            obj
+          )}</p></td>
         </tr>
       </table>
       <h3 class="about">About</h3>
       <p class="desribe-movie">
        ${describe}
       </p>
-      <div>
-        <button class="btnAddWatched">Add Watched</button>
-        <button class="btnAddQueue">Add Queue</button>
+      <div class="wrapper-btn">
+        <button class="btnAddWatched btnModal">Add To Watched</button>
+        <button class="btnAddQueue btnModal">Add To Queue</button>
       </div>
-      <button class="btnTrailer">Trailer</button>
+      
       </div>`;
   };
-  console.log(results);
-  //   const markups = results.map(markup).join('');
+
   movieWrapper.insertAdjacentHTML('beforeend', markup(results));
 }
 
