@@ -27,7 +27,7 @@ movieApi.fetchMoviesWeek().then(data => {
 });
 
 function onClickPagination(e) {
-  console.log(e.target.textContent);
+  console.log(e.target.classList);
 
   if (e.target.classList.contains('first-btn')) {
     movieApi.resetPage();
@@ -81,34 +81,32 @@ function onClickPagination(e) {
     buttonMarkup(movieApi.page);
   }
   if (e.target.classList.contains('main-btn')) {
-    movieApi.page = e.target.textContent;
-
+    movieApi.currentPage(Number(e.target.textContent));
     clearPage();
-    checkCurrentPage();
-    checkNunberPage();
     movieApi.fetchMoviesWeek().then(data => {
       createMarkup(data.results);
     });
-
+    checkCurrentPage();
+    checkNunberPage();
     maxPageBtnEl.classList.remove('currentBtnColor');
     buttonMarkup(e.target.textContent);
   }
 }
 function checkNunberPage() {
-  if (movieApi.page > 4) {
+  if (Number(movieApi.page) > 4) {
     arrowLeftEl.style.display = 'block';
     pointsEl.style.display = 'inline';
   }
 
-  if (movieApi.page <= 4) {
+  if (Number(movieApi.page) <= 4) {
     arrowLeftEl.style.display = 'none';
     pointsEl.style.display = 'none';
   }
-  if (movieApi.page <= 995) {
+  if (Number(movieApi.page) <= 995) {
     endPoints.style.display = 'inline';
     arrofRightEl.style.display = 'block';
   }
-  if (movieApi.page > 995) {
+  if (Number(movieApi.page) > 995) {
     endPoints.style.display = 'none';
     arrofRightEl.style.display = 'none';
   }

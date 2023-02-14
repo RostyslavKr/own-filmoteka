@@ -6,6 +6,7 @@
     margin: 0 auto;
 }
 
+
 .img-movie{
     display: block;
     cursor: pointer;
@@ -22,7 +23,12 @@
         height: 574px;
     }
 }
-
+.img-movie:hover{
+    border: 5px solid #E30813;
+}
+.img-movie:focus{
+    border: 5px solid #E30813;
+}
 .title-movie{
     text-transform: uppercase;
     font-weight: 500;
